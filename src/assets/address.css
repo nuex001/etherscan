@@ -1,0 +1,153 @@
+.container .address {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4em 4em;
+    font-family: monospace;
+}
+
+.container .address nav {
+    width: 100%;
+    height: auto;
+}
+
+.container .address nav .icon {
+    font-size: 5em;
+    cursor: pointer;
+}
+
+.container .address header {
+    width: 100%;
+    height: auto;
+    padding: 2em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .address header .addr {
+    height: auto;
+    font-size: 1.7em;
+    gap: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .address header .addr .copy {
+    cursor: pointer;
+    transition: 500ms ease-out;
+}
+
+.container .address header .addr .copy:active {
+    color: var(--primary);
+}
+
+.container .address header .controls {
+    width: 50%;
+    height: auto;
+    display: flex;
+    gap: 2em 1em;
+    justify-content: space-between;
+    /* border: 2px solid #333; */
+}
+
+.container .address header .controls button {
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 1em 2em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: white;
+    transition: 500ms ease-in-out;
+    cursor: pointer;
+}
+
+.container .address header .controls button.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.container .address table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.4em;
+}
+
+.container .address table td,
+.container .address table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.container .address table th {
+    text-transform: uppercase;
+    font-family: monospace;
+    padding: 10px;
+}
+
+.container .address table td a {
+    color: var(--primary);
+}
+
+.container .address table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.container .address table tr:hover {
+    background-color: #ddd;
+}
+
+.container .address table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+}
+
+
+
+/* ............MOBILE RESPONSIVE............. */
+@media (max-width:768px) {
+    .container .address {
+        padding: 4em 1em;
+    }
+
+    .container .address header {
+        width: 100%;
+        padding: 2em 0em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2em 2em
+    }
+
+    .container .address header .addr {
+        font-size: 1.2em;
+    }
+
+    .container .address header .controls {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .container .address header .controls button {
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 1em 2.2em;
+    }
+
+    .container .address .box {
+        width: 100%;
+        height: auto;
+        overflow-x: scroll;
+    }
+
+    .container .address table {
+        width: 800px;
+    }
+
+
+}

@@ -1,0 +1,95 @@
+.container .blockPage {
+    width: 100%;
+    height: 100vh;
+    padding: 4em 4em;
+    font-family: monospace;
+}
+
+.container .blockPage nav {
+    width: 100%;
+    height: auto;
+}
+
+.container .blockPage nav .icon {
+    font-size: 5em;
+    cursor: pointer;
+}
+
+.container .blockPage nav h1 {
+    font-size: 2em;
+}
+
+.container .blockPage nav h1 span {
+    font-size: 0.6em;
+    font-weight: normal;
+}
+
+.container .blockPage .box {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 1em;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(225, 225, 225, 0.4);
+}
+
+.container .blockPage .box ul {
+    display: flex;
+    align-items: center;
+    gap: 4em;
+    margin: 2em 0em;
+}
+
+.container .blockPage .box ul li {
+    display: flex;
+    align-items: center;
+    font-size: 1.4em;
+    color: var(--text);
+}
+
+.container .blockPage .box ul li:first-child {
+    font-weight: 600;
+    gap: 0.3em;
+    color: #6D757D;
+}
+
+.container .blockPage .box ul li a {
+    color: var(--primary);
+}
+
+
+
+/* ............MOBILE RESPONSIVE............. */
+@media (max-width:768px) {
+    .container .blockPage {
+        padding: 4em 1em;
+    }
+
+    .container .blockPage .box {
+        padding: 2em 1em;
+    }
+
+    .container .blockPage .box ul {
+        gap: 4em 1em;
+        width: 100%;
+    }
+
+    .container .blockPage .box ul li:first-child {
+        width: 35%;
+        font-size: 1.2em;
+        white-space: nowrap;
+    }
+
+    .container .blockPage .box ul li:last-child {
+        width: 65%;
+        display: block;
+        font-size: 1em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

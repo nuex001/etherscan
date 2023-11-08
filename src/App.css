@@ -47,6 +47,7 @@ body {
   height: 60px;
   padding: 0em 1em;
   background-color: #fff;
+  box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   border-radius: 1em;
   display: flex;
   align-items: center;

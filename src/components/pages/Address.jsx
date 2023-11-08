@@ -62,8 +62,8 @@ function Address() {
             </nav>
             <header>
                 <div className="addr">
-                    <p>0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5</p>
-                    <BiSolidCopy className='copy' onClick={() => copyToClipboard("0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5")} />
+                    <p>{address}</p>
+                    <BiSolidCopy className='copy' onClick={() => copyToClipboard(address)} />
                 </div>
                 <div className="controls">
                     <button className='active' ref={(el) => (btnRef.current[0] = el)}

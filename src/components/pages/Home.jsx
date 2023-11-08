@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { AiOutlineSearch } from "react-icons/ai"
 import { BiCube, BiReceipt } from "react-icons/bi"
 import { cutAndAppend, truncateMiddle, convertWeiToEth } from '../utils/textMethods';
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
 function Home() {
     const [blocks, setBlocks] = useState([]);
     const [transactions, setTransactions] = useState([]);
+    const navigate = useNavigate();
     const url = `https://eth-mainnet.g.alchemy.com/v2/${import.meta.env.VITE_API}`;
 
     async function getBlockNumber() {
@@ -49,7 +50,7 @@ function Home() {
     const fetchblocknonce = async () => {
         const rawBlocknumber = await getBlockNumber();
         // console.log(rawBlocknumber);
-        const block = parseInt(rawBlocknumber,16);
+        const block = parseInt(rawBlocknumber, 16);
         if (block > 0) {
             const newBlock = block - 7;
             const updatedBlocks = [];
@@ -61,14 +62,24 @@ function Home() {
             fetchfirstBlockTransaction(rawBlocknumber);
         }
     }
+
+    /**
+     * @submit
+     */
+    const submit = (e) => {
+        e.preventDefault();
+        // console.log(e.target.address.value);
+        navigate(`/addr/${e.target.address.value}`)
+    }
+
     useEffect(() => {
         fetchblocknonce();
     }, [])
     return (
         <div className="home">
-            <form action="">
+            <form action="" onSubmit={submit}>
                 <div className="innerBox">
-                    <input type="text" />
+                    <input type="text" name='address' />
                     <button>
                         <AiOutlineSearch className='icon' />
                     </button>
@@ -96,7 +107,7 @@ function Home() {
                 <hr />
                 {
                     transactions &&
-                    transactions.map((tx,idx) => (
+                    transactions.map((tx, idx) => (
                         <React.Fragment key={idx}>
                             <div className="row">
                                 <div className="cubebox">
